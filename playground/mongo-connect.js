@@ -13,7 +13,6 @@ MongoClient.connect('mongodb://localhost:27017', (err, client) => {
 
 
     client.db('TodoApp').collection('Todos').insertOne({
-        _id: 12345,
         text: 'Some to do',
         completed: false
     }, (err, result) => {
@@ -24,17 +23,17 @@ MongoClient.connect('mongodb://localhost:27017', (err, client) => {
         console.log(JSON.stringify(result.ops, undefined, 2));
     });
 
-    client.db('TodoApp').collection('users').insertOne({
-        name: 'rasekh',
-        age: '26',
-        location: 'kerman'
-    }, (err, result) => {
-        if (err) {
-
-        }
-
-        console.log(JSON.stringify(result.ops[0]._id.getTimestamp(), undefined, 2));
-    });
+    // client.db('TodoApp').collection('users').insertOne({
+    //     name: 'rasekh',
+    //     age: '26',
+    //     location: 'kerman'
+    // }, (err, result) => {
+    //     if (err) {
+    //
+    //     }
+    //
+    //     console.log(JSON.stringify(result.ops[0]._id.getTimestamp(), undefined, 2));
+    // });
     client.close();
 });
 
